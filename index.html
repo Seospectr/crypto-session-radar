@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SessionPredictor — AI Multi-Agent Market Simulation Engine</title>
+  <meta name="description" content="SessionPredictor simulates market participants with autonomous AI agents and produces explainable session forecasts." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-icon">◌</div>
+        <div>
+          <div class="brand-title">SessionPredictor</div>
+          <div class="brand-subtitle">AI Multi-Agent Market Simulation Engine</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#demo">Demo</a>
+        <a href="#how">How it works</a>
+        <a href="#results">Results</a>
+        <a href="https://t.me/cryptosessionradar" target="_blank" rel="noreferrer">Telegram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="pill">Built on 1800+ autonomous AI agents per simulation</div>
+        <h1>
+          The market is not a chart.
+          <span>It is a conflict of intelligent behaviors.</span>
+        </h1>
+        <p>
+          SessionPredictor simulates how institutional desks, smart money, retail participants,
+          high-frequency systems, and trend followers would act inside a live market session.
+          The forecast emerges from their collective behavior, not from a single indicator.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#demo">Try Demo</a>
+          <a class="btn btn-secondary" href="https://t.me/cryptosessionradar" target="_blank" rel="noreferrer">Follow Results in Telegram</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>1800+</strong><span>AI agents</span></div>
+          <div class="stat"><strong>6</strong><span>Trader archetypes</span></div>
+          <div class="stat"><strong>3</strong><span>Core sessions</span></div>
+          <div class="stat"><strong>24/7</strong><span>Monitoring cadence</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card card">
+        <div class="card-head">
+          <div>
+            <div class="eyebrow">Live simulation preview</div>
+            <div class="card-title">Autonomous trader behavior model</div>
+          </div>
+          <div class="mini-badge">1800 agents online</div>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar-row"><span>Institutional desks</span><span>58%</span></div>
+          <div class="bar"><div style="width:58%"></div></div>
+
+          <div class="bar-row"><span>Smart money</span><span>64%</span></div>
+          <div class="bar"><div style="width:64%"></div></div>
+
+          <div class="bar-row"><span>Retail momentum</span><span>70%</span></div>
+          <div class="bar"><div style="width:70%"></div></div>
+
+          <div class="bar-row"><span>Algo / HFT</span><span>76%</span></div>
+          <div class="bar"><div style="width:76%"></div></div>
+
+          <div class="bar-row"><span>Trend followers</span><span>82%</span></div>
+          <div class="bar"><div style="width:82%"></div></div>
+
+          <div class="bar-row"><span>Macro-reactive actors</span><span>88%</span></div>
+          <div class="bar"><div style="width:88%"></div></div>
+        </div>
+
+        <div class="hero-grid">
+          <div class="mini-panel"><span>Direction</span><strong class="down">SHORT</strong></div>
+          <div class="mini-panel"><span>Confidence</span><strong>76%</strong></div>
+          <div class="mini-panel"><span>Session</span><strong>New York</strong></div>
+        </div>
+
+        <div class="card-note">
+          Instead of forcing a prediction from indicators, the system creates thousands
+          of unique agent decisions and extracts the directional consensus that emerges from them.
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section container">
+      <div class="section-wrap card">
+        <div class="section-top">
+          <div>
+            <div class="section-eyebrow">Interactive demo</div>
+            <h2>Explore a live simulation-style experience</h2>
+            <p>
+              This front-end demo is designed for GitHub Pages. Visitors can choose an asset,
+              switch market sessions, run a beautiful simulation, and inspect the resulting
+              pressure map without exposing the private core engine.
+            </p>
+          </div>
+          <a class="tag-link" href="https://t.me/cryptosessionradar" target="_blank" rel="noreferrer">@cryptosessionradar</a>
+        </div>
+
+        <div class="demo-grid">
+          <div class="demo-controls">
+            <h3>Simulation controls</h3>
+
+            <div class="control-block">
+              <div class="control-label">Trading pair</div>
+              <div class="button-grid" id="pairButtons"></div>
+            </div>
+
+            <div class="control-block">
+              <div class="control-label">Market session</div>
+              <div class="button-grid" id="sessionButtons"></div>
+            </div>
+
+            <button id="runButton" class="btn btn-gradient">Run Simulation</button>
+
+            <div class="sim-flow" id="simFlow"></div>
+
+            <div class="soft-note">
+              Later you can replace this showcase demo with a real production URL or wire it to
+              a protected backend while keeping the public experience on GitHub Pages.
+            </div>
+          </div>
+
+          <div class="demo-output">
+            <div class="output-head">
+              <div>
+                <div class="eyebrow" id="outputEyebrow">BTC-USDT • New York session</div>
+                <div class="output-title">Emergent forecast output</div>
+              </div>
+              <div id="directionBadge" class="direction-badge down">SHORT • 81%</div>
+            </div>
+
+            <p class="summary" id="summaryText"></p>
+
+            <div class="output-grid" id="metricsGrid"></div>
+
+            <div class="split-grid">
+              <div class="panel">
+                <h3>Archetype pressure map</h3>
+                <div id="archetypesList"></div>
+              </div>
+              <div class="stack">
+                <div class="panel">
+                  <h3>Agent event log</h3>
+                  <div id="logsList"></div>
+                </div>
+                <div class="panel highlight">
+                  <h3>Interpretation layer</h3>
+                  <p>
+                    Visitors do not just see LONG or SHORT. They see which participant groups dominate,
+                    where confidence comes from, and how session-specific behavior changes the result.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section container">
+      <div class="card info-block">
+        <div class="section-eyebrow">Core thesis</div>
+        <h2>Instead of modeling price directly, the system models the participants</h2>
+        <p>
+          Each simulation creates a large population of unique AI agents. Every agent has its own
+          behavioral profile, reaction style, and directional preferences based on a trader archetype.
+          The market forecast appears as a consensus of those competing forces.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card"><h3>Autonomous agents</h3><p>Each agent behaves independently and reacts according to its own personality and archetype.</p></div>
+          <div class="feature-card"><h3>Archetype framework</h3><p>Institutional, smart money, retail, HFT, trend, and macro-reactive behavior are modeled separately.</p></div>
+          <div class="feature-card"><h3>Emergent consensus</h3><p>Directional pressure is not hard-coded. It emerges from the combined actions of the simulated participants.</p></div>
+          <div class="feature-card"><h3>Explainable forecast</h3><p>The result includes confidence, pressure breakdown, levels, and narrative interpretation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container two-col">
+      <div class="card">
+        <div class="section-eyebrow">Simulation pipeline</div>
+        <h2>How a market session forecast is formed</h2>
+        <div class="steps">
+          <div class="step"><span>01</span><p>Read current session conditions and local market state</p></div>
+          <div class="step"><span>02</span><p>Generate or restore the active population of trader agents</p></div>
+          <div class="step"><span>03</span><p>Assign archetype rules, personalities, and behavioral biases</p></div>
+          <div class="step"><span>04</span><p>Run the multi-agent simulation loop under the selected session context</p></div>
+          <div class="step"><span>05</span><p>Aggregate collective pressure, confidence, and levels into a final forecast</p></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-eyebrow">Why it looks different</div>
+        <h2>Positioned as a simulation engine, not just a trading dashboard</h2>
+        <div class="compare-table">
+          <div class="row header"><div>Dimension</div><div>SessionPredictor</div><div>Conventional approach</div></div>
+          <div class="row"><div>Prediction source</div><div>Agent behavior simulation</div><div>Indicators or a single model</div></div>
+          <div class="row"><div>Market logic</div><div>Emergent from thousands of autonomous actors</div><div>Explicit formula or static rules</div></div>
+          <div class="row"><div>Interpretability</div><div>Archetype-by-archetype pressure map</div><div>Usually opaque or superficial</div></div>
+          <div class="row"><div>Session awareness</div><div>Built around Asia / Europe / New York handoff</div><div>Often generic timeframe analysis</div></div>
+        </div>
+        <div class="soft-note top-space">
+          Core engine remains proprietary. This site is designed to showcase the concept, explain the model,
+          and route users into your private product or real-time demo.
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section container">
+      <div class="card result-block">
+        <div>
+          <div class="section-eyebrow">Public proof layer</div>
+          <h2>Follow session predictions and published outcomes in Telegram</h2>
+          <p>
+            Your landing page should not only describe the system. It should also connect visitors to a live proof stream.
+            Use the Telegram channel as the public layer where each session forecast, commentary update, and directional narrative is published.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-cyan" href="https://t.me/cryptosessionradar" target="_blank" rel="noreferrer">Open @cryptosessionradar</a>
+            <a class="btn btn-secondary" href="#demo">Back to Demo</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>What to publish there</h3>
+          <div class="bullet-card">Session forecast cards with LONG / SHORT bias and confidence</div>
+          <div class="bullet-card">Brief archetype summary showing which participant groups dominate</div>
+          <div class="bullet-card">Follow-up commentary after session close to build trust and transparency</div>
+          <div class="bullet-card">Screenshots or snippets from the live product to reinforce credibility</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="card cta-block">
+        <div class="section-eyebrow">Support the project</div>
+        <h2>Back the development of SessionPredictor</h2>
+        <p>
+          If you want to support research, design, and development, you can use the addresses below.
+        </p>
+
+        <div class="wallet-grid">
+          <div class="wallet"><span>Bitcoin (BTC)</span><code>bc1q2xx39ah9w0jw9yrvcjmkay0ur6y9ca0hze8hqhsevrt9d7rn06fsa060s2</code></div>
+          <div class="wallet"><span>Ethereum (ERC-20)</span><code>0x449e21cd13094f65599970269becd941fbe6153f</code></div>
+          <div class="wallet"><span>USDT (TRC20 / Tron)</span><code>TRZ1RcEFm42GtpsVBnnZmGvfxZHY74Fbyu</code></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#demo">Try Demo</a>
+          <a class="btn btn-secondary" href="https://t.me/cryptosessionradar" target="_blank" rel="noreferrer">See Session Results</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <div>SessionPredictor — public showcase build for GitHub Pages</div>
+    <div><a href="https://t.me/cryptosessionradar" target="_blank" rel="noreferrer">@cryptosessionradar</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
