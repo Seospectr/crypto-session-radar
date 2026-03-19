@@ -68,7 +68,7 @@ Depending on the simulation context, the product can generate structured outputs
 Live publications, session commentary, and public prediction updates are available in the Telegram channel:
 
 **[@cryptosessionradar](https://t.me/cryptosessionradar)**
-Demo
+## Demo
 **[Try Demo](https://seospectr.github.io/crypto-session-radar/)**
 
 ---
