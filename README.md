@@ -9,7 +9,7 @@
 
 ## What is included in this package
 
-This archive is a **ready-to-upload GitHub Pages build** for your public showcase.
+
 
 Files included:
 
